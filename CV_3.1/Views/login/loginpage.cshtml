@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Panel | Giriş </title>
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="~/assets/css/LoginStyle.css" type="text/css" />
+    <link rel="stylesheet" href="~/assets/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="~/assets/webfonts/" />
+    <link href="https://fonts.googleapis.com/css2?family=Anton" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" type="text/css" />
+</head>
+<body>
+    <div class="row " style="margin-top: 10%;">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="co">
+                <form action="/login/login" method="post">
+                    <div class="login-in-box">
+                        <div class="login-head">GIRIS YAP</div>
+                        <input class="form-control login-ad" placeholder="Kullanıcı Adı" type="text" id="kullaniciadi" name="KullaniciAdi" />
+                        <input class="form-control login-parola" placeholder="Parola" type="password" id="parola" name="Parola" />
+                        <input type="submit" class="login-button" value="Giriş" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</body>
+</html>

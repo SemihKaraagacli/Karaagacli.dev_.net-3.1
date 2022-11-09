@@ -1,0 +1,44 @@
+﻿@model CV_3._1.Models.PanelProject
+
+@{
+    ViewData["Title"] = "PPro_Get";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<div class="row row-3">
+    <div class="col-6">
+        <div class="cizgi-baslıgı">Veri Düzenle</div>
+        <div class="cizgi"></div>
+    </div>
+    <div class="col-6 back-button">
+        <a href="/panelproject/project">Geri<i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+</div>
+
+@using (Html.BeginForm("projectupdate", "panelproject", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="col-12">
+        <label for="postid" class="postid-label">Id:</label>
+        @Html.TextBoxFor(x=>x.Id, new{@class="form-control postid-box-getir"})
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <label for="postad" class="postad-label">Post Adı:</label>
+            @Html.TextBoxFor(x=>x.ProjectAd, new{@class="form-control postad-box-getir"})
+        </div>
+        <div class="col-6">
+            <label for="postadres" class="postadres-label">Post Adresi:</label>
+            @Html.TextBoxFor(x=>x.ProjectAdres, new{@class="form-control postadres-box-getir"})
+        </div>
+    </div>
+    <div class="col-12">
+        <label for="posticerik" class="posticerik-label">Post İçerik:</label>
+        @Html.TextAreaFor(x=>x.ProjectIcerik, new{@class="form-control posticerik-box-getir"})
+    </div>
+    <div class="col-12">
+        <label for="postresim" class="postresim-label">Post Resmi:</label>
+        <input class="postresim-box-getir form-control" type="file" id="postresim" name="ProjectDosya">
+    </div>
+
+    <div class="row button-kaydet"><button class="ekle-kaydet-button"> Güncelle</button></div>
+}

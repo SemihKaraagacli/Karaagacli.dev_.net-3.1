@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.baslik = "PROFİL EKLE";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<div class="row row-3">
+    <div class="col-6">
+        <div class="cizgi-baslıgı">Veri Ekle</div>
+        <div class="cizgi"></div>
+    </div>
+    <div class="col-6 back-button">
+        <a href="/panelprofil/profil">Geri<i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+</div>
+
+<form method="post" class="form-group" action="profilAdd" asp-controller="panelprofil" enctype="multipart/form-data">
+
+    <div class="row">
+        <div class="col-3">
+            <label for="MeslekAlanı" class="meslekalanı">Meslek Alanı:</label>
+            <input class="meslekalanı-box form-control" id="MeslekAlanı" name="MeslekAlanı">
+        </div>
+        <div class="col-3">
+            <label for="Mail" class="mail">Mail:</label>
+            <input class="mail-box form-control" id="Mail" name="Mail">
+        </div>
+        <div class="col-3">
+            <label for="Konum" class="konum">Konum:</label>
+            <input class="konum-box form-control" id="Konum" name="Konum">
+        </div>
+        <div class="col-3">
+            <label for="konumadresi" class="konum">Konum Adresi:</label>
+            <input class="konum-box form-control" id="konumadresi" name="KonumAdresi">
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <label for="Github" class="github">Github:</label>
+            <input class="github-box form-control" id="Github" name="Github">
+        </div>
+        <div class="col-3">
+            <label for="Linkedin" class="linkedin">Linkedin:</label>
+            <input class="linkedin-box form-control" id="Linkedin" name="Linkedin">
+        </div>
+        <div class="col-3">
+            <label for="Twitter" class="twitter">Twitter:</label>
+            <input class="twitter-box form-control" id="Twitter" name="Twitter">
+        </div>
+        <div class="col-3">
+            <label for="instagram" class="twitter">Instagram:</label>
+            <input class="twitter-box form-control" id="instagram" name="Instagram">
+        </div>
+
+    </div>
+
+    <div class="col-12">
+        <label for="ProfilDosya" class="profilresmi">Profil Resmi:</label>
+        <input class="form-control form-control-sm profilresmi-box " name="ProfilDosya" id="formFileSm" type="file">
+    </div>
+
+    <div class="row button-kaydet"> <input type="submit" value="Kaydet" class="ekle-kaydet-button"></div>
+</form>

@@ -1,0 +1,108 @@
+:root {
+    --background-color: #2C3333;
+    --button-color: #E6D5B8;
+    --login-backgraound-color: #3470d1;
+    --writing-color: #F5F2E7;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+@media (min-width:481px) {
+    .co {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login-in-box {
+        width: 450px;
+        height: 280px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: var(--login-backgraound-color);
+        box-shadow: rgba(205, 205, 216, 0.1) 0px 4px 16px, rgba(205, 205, 216, 0.1) 0px 8px 24px, rgba(205, 205, 216, 0.1) 0px 16px 56px;
+    }
+
+    .login-head {
+        font-size: 40px;
+        text-align: center;
+        font-family: 'Anton', sans-serif;
+        letter-spacing: 3px;
+        margin-top: px;
+        margin-bottom: 20px;
+    }
+
+    .login-ad, .login-parola {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .login-button {
+        width: 110px;
+        border: none;
+        border-radius: 6px;
+        background-color: var(--button-color);
+    }
+
+    .login-button {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: 'Inter', sans-serif;
+    }
+}
+
+@media (max-width:480px) {
+    .co {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login-in-box {
+        width: 240px;
+        height: 280px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: var(--login-backgraound-color);
+        box-shadow: rgba(205, 205, 216, 0.1) 0px 4px 16px, rgba(205, 205, 216, 0.1) 0px 8px 24px, rgba(205, 205, 216, 0.1) 0px 16px 56px;
+    }
+
+    .login-head {
+        font-size: 40px;
+        text-align: center;
+        font-family: 'Anton', sans-serif;
+        letter-spacing: 3px;
+        margin-top: px;
+        margin-bottom: 20px;
+    }
+
+    .login-ad, .login-parola {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .login-button {
+        width: 110px;
+        border: none;
+        border-radius: 6px;
+        background-color: var(--button-color);
+    }
+
+    .login-button {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: 'Inter', sans-serif;
+    }
+}

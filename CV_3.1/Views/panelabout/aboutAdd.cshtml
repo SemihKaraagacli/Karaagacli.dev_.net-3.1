@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.baslik = "HAKKKIMDA EKLE";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<div class="row row-3">
+    <div class="col-6">
+        <div class="cizgi-baslıgı">Veri Ekle</div>
+        <div class="cizgi"></div>
+    </div>
+    <div class="col-6 back-button">
+        <a href="/panelabout/about" ">Geri<i class="fa-solid fa-chevron-right"></i></a>
+
+    </div>
+</div>
+
+<div class="tanım-box">
+    <form method="post" class="form-group ">
+        <label for="NelerYapıyorumAd" class="neyapıyor-baslik-label">Ne Yapıyor Başlık:</label>
+        <input class="neyapıyor-baslik form-control" id="NelerYapıyorumAd" name="NelerYapıyorumAd">
+
+        <div class="row">
+            <div class="col-6">
+                <label for="Tanıtım" class="tanım-baslik">Tanım:</label>
+                <textarea class="tanım-alanı form-control" id="Tanıtım" name="Tanıtım" placeholder="..."></textarea>
+            </div>
+
+            <div class="col-6">
+                <label for="NelerYapıyorumIcerik" class="neyapıyor-icerik-label">Ne Yapıyor İçerik:</label>
+                <textarea class="neyapıyor-icerik form-control" id="NelerYapıyorumIcerik" name="NelerYapıyorumIcerik" placeholder="..."></textarea>
+            </div>
+        </div>
+        <div class="row button-kaydet"> <input type="submit" value="Kaydet" class="ekle-kaydet-button"></div>
+
+
+    </form>
+</div>

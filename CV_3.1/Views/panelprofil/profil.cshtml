@@ -1,0 +1,48 @@
+﻿@using CV_3._1.Models
+@model List<PanelProfil>
+
+@{
+    ViewBag.baslik = "PROFİL";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<div class="cizgi-baslıgı">Veri Listesi</div>
+<div class="cizgi"></div>
+
+<table class="tablo table table-sm table-striped table-dark">
+    <thead>
+        <tr>
+            <th class="profil-id-satir">#</th>
+            <th class="profil-satir">Profil Resmi</th>
+            <th class="profil-satir">Meslek Alanı</th>
+            <th class="profil-satir">Mail</th>
+            <th class="profil-satir">Konum</th>
+            <th class="profil-satir">KonumAdresi</th>
+            <th class="profil-satir">Github</th>
+            <th class="profil-satir">Linkedin</th>
+            <th class="profil-satir">Twitter</th>
+            <th class="profil-satir">Instagram</th>
+            <th class="profil-satir">-</th>
+
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td class="align-middle profil-id-satir">@x.Id</td>
+                <td class="align-middle profil-satir"><img class="src-resim" src="/assets/images/Profil_images/@x.ProfilResmi" width="70px" /></td>
+                <td class="align-middle profil-satir">@x.MeslekAlanı</td>
+                <td class="align-middle profil-satir">@x.Mail</td>
+                <td class="align-middle profil-satir">@x.Konum</td>
+                <td class="align-middle profil-satir">@x.KonumAdresi</td>
+                <td class="align-middle profil-satir">@x.Github</td>
+                <td class="align-middle profil-satir">@x.Linkedin</td>
+                <td class="align-middle profil-satir">@x.Twitter</td>
+                <td class="align-middle profil-satir">@x.Instagram</td>
+                <td class="align-middle profil-satir"><a href="/panelprofil/profilGet/@x.Id/" class="guncelle">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/panelprofil/profilAdd" class="veri-ekle"> Yeni Veri Ekle</a>

@@ -1,0 +1,40 @@
+﻿@using CV_3._1.Models
+@model List<PanelEducation>
+
+@{
+    ViewBag.baslik = "EĞİTİM";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<div class="cizgi-baslıgı">Veri Listesi</div>
+<div class="cizgi"></div>
+
+<table class="tablo table table-striped table-dark">
+    <thead>
+        <tr>
+            <th class="education-id-satir">#</th>
+            <th class="education-satir">Okul Adı</th>
+            <th class="education-satir">Yıl</th>
+            <th class="education-satir">Bölüm</th>
+            <th class="education-satir">İçerik</th>
+            <th class="education-guncelle-satir">-</th>
+            <th class="education-guncelle-satir">-</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td class="align-middle education-id-satir">@x.Id</td>
+                <td class="align-middle education-satir">@x.OkulAd</td>
+                <td class="align-middle education-satir">@x.OkulYıl</td>
+                <td class="align-middle education-satir">@x.OkulAlan</td>
+                <td class="align-middle education-satir">@x.OkulIcerik</td>
+                <td class="align-middle education-guncelle-satir"><a href="/paneleducation/educationRemove/@x.Id" class="guncelle">Sil</a></td>
+                <td class="align-middle education-guncelle-satir"><a href="/paneleducation/educationGet/@x.Id" class="guncelle">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/paneleducation/educationAdd" class="veri-ekle"> Yeni Veri Ekle</a>

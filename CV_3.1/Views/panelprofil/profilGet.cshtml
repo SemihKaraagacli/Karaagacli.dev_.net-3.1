@@ -1,0 +1,68 @@
+﻿@model CV_3._1.Models.PanelProfil
+
+@{
+    ViewBag.baslik = "PROFİL GÜNCELLE";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<div class="row row-3">
+    <div class="col-6">
+        <div class="cizgi-baslıgı">Veri Düzenle</div>
+        <div class="cizgi"></div>
+    </div>
+    <div class="col-6 back-button">
+        <a href="/panelprofil/profil">Geri<i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+</div>
+
+@using (Html.BeginForm("profilUpdate", "panelprofil", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="col-12 kolon">
+        <label for="Id" class="id">Id:</label>
+        @Html.TextBoxFor(x=>x.Id, new {@class = "form-contol id-box-getir"})
+    </div>
+    <div class="row">
+        <div class="col-3 kolon">
+            <label for="MeslekAlanı" class="meslekalanı">Meslek Alanı:</label>
+            @Html.TextBoxFor(x=>x.MeslekAlanı, new {@class = " form-contol meslekalanı-box-getir "})
+        </div>
+        <div class="col-3 kolon">
+            <label for="Mail" class="mail">Mail:</label>
+            @Html.TextBoxFor(x=>x.Mail, new {@class = "form-contol mail-box-getir"})
+        </div>
+        <div class="col-3 kolon">
+            <label for="Konum" class="konum">Konum:</label>
+            @Html.TextBoxFor(x=>x.Konum, new {@class = "form-contol konum-box-getir"})
+        </div>
+        <div class="col-3 kolon">
+            <label for="konumadresi" class="konum">Konum Adresi:</label>
+            @Html.TextBoxFor(x=>x.KonumAdresi, new {@class = "form-contol konum-box-getir"})
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 kolon">
+            <label for="Github" class="github">Github:</label>
+            @Html.TextBoxFor(x=>x.Github, new {@class = "form-contol github-box-getir"})
+        </div>
+        <div class="col-3 kolon">
+            <label for="Linkedin" class="linkedin">Linkedin:</label>
+            @Html.TextBoxFor(x=>x.Linkedin, new {@class = "form-contol linkedin-box-getir"})
+        </div>
+        <div class="col-3 kolon">
+            <label for="Twitter" class="twitter">Twitter:</label>
+            @Html.TextBoxFor(x=>x.Twitter, new {@class = "form-contol twitter-box-getir"})
+        </div>
+        <div class="col-3 kolon">
+            <label for="instagram" class="twitter">Instagram:</label>
+            @Html.TextBoxFor(x=>x.Instagram, new {@class = "form-contol twitter-box-getir"})
+        </div>
+    </div>
+
+    <label for="ProfilDosya" class="profilresmi">Profil Resmi:</label>
+    <input class="form-control form-control-sm profilresmi-box " name="ProfilDosya" id="formFileSm" type="file" />
+
+    <div class="row button-kaydet"><button class="ekle-kaydet-button"> Güncelle</button></div>
+
+
+}
+

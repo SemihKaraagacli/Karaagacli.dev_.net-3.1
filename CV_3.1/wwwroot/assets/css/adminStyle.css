@@ -1,0 +1,1049 @@
+:root {
+    --writing-color: #EEEEEE;
+    --body-background-color: #393E46;
+    --main-bar-background-color: #222831;
+    --toggle-bar-background-color: #222831;
+    --toggle-bar-color: #F66B0E;
+    --toggle-bar-hover-color: #f8863a;
+}
+
+body {
+    background-color: var(--body-background-color);
+    color: var(--writing-color);
+    font-family: 'Inter', serif;
+}
+
+@media screen and (min-width:768px) {
+    .main-bar {
+        background-color: var(--main-bar-background-color);
+        height: 45px;
+    }
+
+    /* ################### NAVBAR ALANI ################# */
+
+    #menu__toggle {
+        opacity: 0;
+        position: relative;
+        top: 5px;
+        left: 20px;
+        width: 40px;
+        height: 30px;
+    }
+
+        #menu__toggle:checked + .menu__btn > span {
+            transform: rotate(45deg);
+        }
+
+            #menu__toggle:checked + .menu__btn > span::before {
+                top: 0;
+                transform: rotate(0deg);
+            }
+
+            #menu__toggle:checked + .menu__btn > span::after {
+                top: 0;
+                transform: rotate(90deg);
+            }
+
+        #menu__toggle:checked ~ .menu__box {
+            left: 0 !important;
+        }
+
+    .menu__btn {
+        position: relative;
+        top: 15px;
+        right:15px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+        .menu__btn > span,
+        .menu__btn > span::before,
+        .menu__btn > span::after {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: var(--writing-color);
+            transition-duration: .25s;
+        }
+
+            .menu__btn > span::before {
+                content: '';
+                top: -8px;
+            }
+
+            .menu__btn > span::after {
+                content: '';
+                top: 8px;
+            }
+
+    .menu__box {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 20%;
+        height: 100%;
+        margin: 0;
+        padding: 12% 0px;
+        list-style: none;
+        background-color: var(--toggle-bar-background-color);
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+        transition-duration: .25s;
+        border-radius: 0px 4px 4px 0px;
+    }
+
+    .menu__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 24px;
+        color: var(--writing-color);
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        transition-duration: .25s;
+    }
+
+        .menu__item:hover {
+            color: var(--toggle-bar-color);
+        }
+
+        .menu__item i {
+            font-size: 25px;
+        }
+
+    /* ################### SAYFA ADI ALANI ################# */
+
+    .col-4 h3 {
+        font-family: 'Lora', serif;
+        padding-top: 5px;
+        text-align: center;
+        font-weight: 200;
+    }
+    /* ################### LİSTE SİMETRİ ALANI ################# */
+    .profil-satir {
+        width:10%;
+        height:auto;
+    }
+    .profil-id-satir{
+        width:1%;
+    }
+    .about-satir {
+        width: 15%;
+        height: auto;
+    }
+    .about-id-satir {
+        width: 1%;
+        height: auto;
+    }
+    .about-guncelle-satir {
+        width: 10%;
+        height: auto;
+    }
+    .education-satir {
+        width: 13%;
+        height: auto;
+    }
+    .education-id-satir {
+        width: 1%;
+        height: auto;
+    }
+
+    .education-guncelle-satir {
+        width: 11%;
+        height: auto;
+    }
+
+    .experiance-satir {
+        width: 11%;
+        height: auto;
+    }
+
+    .experiance-id-satir {
+        width: 1%;
+        height: auto;
+    }
+
+    .experiance-guncelle-satir {
+        width: 11%;
+        height: auto;
+    }
+
+    .project-satir {
+        width: 16%;
+        height: auto;
+    }
+    .project-satir img{
+        width:70px;
+    }
+
+    .project-id-satir {
+        width: 1%;
+        height: auto;
+    }
+
+    .project-guncelle-satir {
+        width: 7%;
+        height: auto;
+    }
+
+
+    /* ################### ADMİN PROFİL CHECKLİST ################# */
+    #menu__toggle-2 {
+        opacity: 0;
+        position: relative;
+        float: right;
+        top: 6px;
+        right: 30px;
+        width: 35px;
+        height: 30px;
+    }
+
+        #menu__toggle-2:checked ~ .menu__box-2 {
+            right: 0 !important;
+        }
+
+    .menu__btn-2 {
+        float: right;
+        position: relative;
+        top: 6px;
+        left: 17px;
+        width: 40px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+        .menu__btn-2 i {
+            font-size: 30px;
+        }
+
+    .menu__box-2 {
+        display: block;
+        position: fixed;
+        top: 45px;
+        right: -100%;
+        width: 300px;
+        height: 100px;
+        margin: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        list-style: none;
+        background-color: var(--toggle-bar-background-color);
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+        transition-duration: .25s;
+        border-radius: 0px 0px 10px 10px;
+    }
+
+        .menu__box-2 span {
+            padding-left: 30px;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+
+    .menu__item-2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--writing-color);
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        transition-duration: .25s;
+    }
+
+        .menu__item-2 i {
+            margin-top: 8px;
+            font-size: 25px;
+            color: var(--writing-color);
+        }
+
+            .menu__item-2 i:hover {
+                color: var(--toggle-bar-color);
+            }
+
+    .menu__item i {
+        font-size: 25px;
+    }
+
+    /* ################### ORTAK KOD ALANI ################# */
+
+    .icerik {
+        padding: 25px 60px 0px 60px;
+    }
+
+    .cizgi-baslıgı {
+        padding: 0;
+        margin: 0;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .cizgi {
+        border: 3px solid #F66B0E;
+        background-color: #F66B0E;
+        border-radius: 4px;
+        width: 150px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    .tablo {
+        /*padding-left:70px;
+        padding-right:70px;*/
+        text-align: center;
+        word-break:break-word;
+    }
+
+    .guncelle {
+        color: var(--toggle-bar-color);
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+        .guncelle:hover {
+            color: var(--toggle-bar-hover-color);
+        }
+
+    .veri-ekle {
+        display: block;
+        background-color: var(--toggle-bar-color);
+        color: var(--writing-color);
+        text-align: center;
+        width: 150px;
+        height: 30px;
+        padding-top: 3px;
+        margin-bottom:90px;
+        border-radius: 5px;
+        font-size: 17px;
+        font-weight: bolder;
+        text-decoration: none;
+    }
+
+        .veri-ekle:hover {
+            background-color: var(--toggle-bar-hover-color);
+            color: var(--writing-color);
+        }
+
+    .button-kaydet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .ekle-kaydet-button {
+        display: block;
+        border: none;
+        background-color: var(--toggle-bar-color);
+        color: var(--writing-color);
+        text-align: center;
+        width: 150px;
+        height: 30px;
+        padding-top: 3px;
+        border-radius: 5px;
+        font-size: 17px;
+        font-weight: bolder;
+        text-decoration: none;
+    }
+
+        .ekle-kaydet-button:hover {
+            background-color: var(--toggle-bar-hover-color);
+            color: var(--writing-color);
+        }
+
+    .kolon {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+    }
+
+    .row-3 {
+        margin-top: 20px;
+    }
+
+    .back-button {
+        position:relative;
+        top:6px;
+        left:10px;
+        text-align: end;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+        .back-button a {
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            color:var(--writing-color);
+        }
+            .back-button a:hover{
+                color:var(--toggle-bar-color);
+            }
+
+            .back-button i {
+                font-size: 30px;
+                position: relative;
+                top: 4px;
+            }
+
+    /* ################### PROFİL ALANI ################# */
+
+    .meslekalanı, .mail, .konum, .github, .linkedin, .twitter, .profilresmi, .id {
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--writing-color);
+        margin-bottom: 8px;
+    }
+
+    .meslekalanı-box, .mail-box, .konum-box, .github-box, .linkedin-box, .twitter-box, .profilresmi-box {
+        margin-bottom: 15px;
+        border: none;
+    }
+
+    .meslekalanı-box-getir, .mail-box-getir, .konum-box-getir, .github-box-getir, .linkedin-box-getir, .twitter-box-getir, .profilresmi-box-getir, .id-box-getir {
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 5px;
+        height: 35px;
+    }
+
+    /* ################### HAKKIMIZDA ALANI ################# */
+
+    .neyapıyor-baslik-label, .tanım-baslik, .neyapıyor-icerik-label, .id-label {
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--writing-color);
+        margin-bottom: 8px;
+    }
+
+    .neyapıyor-baslik, .tanım-alanı, .neyapıyor-icerik {
+        margin-bottom: 15px;
+        border: none;
+    }
+
+    .neyapıyor-icerik, .tanım-alanı {
+        height: 100px !important;
+    }
+
+    .neyapıyor-baslik-getir, .id-box-getir {
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 5px;
+        height: 35px;
+    }
+
+    .neyapıyor-icerik-getir, .tanım-alanı-getir {
+        height: 100px !important;
+        border-radius: 5px;
+    }
+
+    /* ################### EĞİTİM ALANI ################# */
+
+    .okulad-label, .okulyil-label, .okulalan-label, .okulicerik-label, .okulid-label {
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--writing-color);
+        margin-bottom: 8px;
+    }
+
+    .okulad-box .okulyil-box, .okulalan-box, .okulicerik-box {
+        margin-bottom: 15px;
+        border: none;
+    }
+
+    .okulad-box-getir, .okulyil-box-getir, .okulalan-box-getir, .okulid-box-getir {
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 5px;
+        height: 35px;
+    }
+
+    .okulicerik-box-getir {
+        height: 100px !important;
+        border-radius: 5px;
+    }
+
+    /* ################### DENEYİM ALANI ################# */
+
+    .deneyimad-label, .deneyimyil-label, .deneyimalan-label, .deneyimicerik-label, .deneyimid-label {
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--writing-color);
+        margin-bottom: 8px;
+    }
+
+    .deneyimad-box, .deneyimyil-box, .deneyimalan-box, .deneyimicerik-box {
+        margin-bottom: 15px;
+        border: none;
+    }
+
+    .deneyimid-box-getir, .deneyimad-box-getir, .deneyimyil-box-getir, .deneyimalan-box-getir {
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 5px;
+        height: 35px;
+    }
+
+    .deneyimicerik-box {
+        height: 100px !important;
+    }
+
+    .deneyimicerik-box-getir {
+        height: 100px !important;
+        border-radius: 5px;
+    }
+
+    /* ################### BLOG ALANI ################# */
+
+    .postad-label, .postadres-label, .posticerik-label, .postresim-label, .postid-label {
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--writing-color);
+        margin-bottom: 8px;
+    }
+
+    .postad-box, .postadres-box, .posticerik-box, .postresim-box, .postad-box-getir, .postadres-box-getir, .posticerik-box-getir, .postresim-box--getir, .postid-box-getir {
+        margin-bottom: 15px;
+        border: none;
+    }
+
+    .posticerik-box, .posticerik-box-getir {
+        height: 100px !important;
+        border-radius: 5px;
+    }
+}
+
+
+@media (max-width:767px){
+    .main-bar {
+        background-color: var(--main-bar-background-color);
+        height: 45px;
+    }
+
+    /* ################### NAVBAR ALANI ################# */
+    #menu__toggle {
+        opacity: 0;
+        position: relative;
+        top: 5px;
+        left: 20px;
+        width: 40px;
+        height: 30px;
+    }
+
+        #menu__toggle:checked + .menu__btn > span {
+            transform: rotate(45deg);
+        }
+
+            #menu__toggle:checked + .menu__btn > span::before {
+                top: 0;
+                transform: rotate(0deg);
+            }
+
+            #menu__toggle:checked + .menu__btn > span::after {
+                top: 0;
+                transform: rotate(90deg);
+            }
+
+        #menu__toggle:checked ~ .menu__box {
+            left: 0 !important;
+        }
+
+    .menu__btn {
+        position: relative;
+        top: 19px;
+        right:15px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+        .menu__btn > span,
+        .menu__btn > span::before,
+        .menu__btn > span::after {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: var(--writing-color);
+            transition-duration: .25s;
+        }
+
+            .menu__btn > span::before {
+                content: '';
+                top: -8px;
+            }
+
+            .menu__btn > span::after {
+                content: '';
+                top: 8px;
+            }
+
+    .menu__box {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 20%;
+        height: 100%;
+        margin: 0;
+        padding: 12% 0px;
+        list-style: none;
+        background-color: var(--toggle-bar-background-color);
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+        transition-duration: .25s;
+        border-radius: 0px 4px 4px 0px;
+    }
+
+    .menu__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 24px;
+        color: var(--writing-color);
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+        transition-duration: .25s;
+    }
+
+        .menu__item:hover {
+            color: var(--toggle-bar-color);
+        }
+
+        .menu__item i {
+            font-size: 25px;
+        }
+
+    /* ################### SAYFA ADI ALANI ################# */
+
+    .col-4 h3 {
+        font-size:15px;
+        padding-top: 5px;
+        text-align: center;
+        font-weight: bolder;
+    }
+    /* ################### LİSTE SİMETRİ ALANI ################# */
+    .profil-satir {
+        font-size:9px;
+        width: 10%;
+        height: auto;
+    }
+    .profil-satir img{
+        width:30px;
+    }
+
+    .profil-id-satir {
+        font-size: 9px;
+        width: 1%;
+    }
+
+    .about-satir {
+        font-size: 9px;
+        width: 12%;
+        height: auto;
+    }
+
+    .about-id-satir {
+        font-size: 9px;
+        width: 1%;
+        height: auto;
+    }
+
+    .about-guncelle-satir {
+        font-size: 9px;
+        width: 9%;
+        height: auto;
+    }
+
+    .education-satir {
+        font-size: 9px;
+        width: 11%;
+        height: auto;
+    }
+
+    .education-id-satir {
+        font-size: 9px;
+        width: 1%;
+        height: auto;
+    }
+
+    .education-guncelle-satir {
+        font-size: 9px;
+        width: 11%;
+        height: auto;
+    }
+
+    .experiance-satir {
+        font-size: 9px;
+        width:11%;
+        height: auto;
+    }
+
+    .experiance-id-satir {
+        font-size: 9px;
+        width: 1%;
+        height: auto;
+    }
+
+    .experiance-guncelle-satir {
+        font-size: 9px;
+        width:11%;
+        height: auto;
+    }
+
+    .project-satir {
+        font-size: 9px;
+        width: 16%;
+        height: auto;
+    }
+    .project-satir img{
+        width:55px;
+    }
+
+    .project-id-satir {
+        font-size: 9px;
+        width: 1%;
+        height: auto;
+    }
+
+    .project-guncelle-satir {
+        font-size: 16px;
+        width: 8%;
+        height: auto;
+    }
+
+
+    /* ################### ADMİN PROFİL CHECKLİST ################# */
+    #menu__toggle-2 {
+        opacity:0;
+        position: relative;
+        float: right;
+        top: 6px;
+        right: 0px;
+        width: 35px;
+        height: 30px;
+    }
+
+        #menu__toggle-2:checked ~ .menu__box-2 {
+            right: 0 !important;
+        }
+
+    .menu__btn-2 {
+        float: right;
+        position: relative;
+        top: 6px;
+        left: 45px;
+        width: 40px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+        .menu__btn-2 i {
+            
+            font-size: 30px;
+        }
+
+    .menu__box-2 {
+        display: block;
+        position: fixed;
+        top: 45px;
+        right: -100%;
+        width: 300px;
+        height: 100px;
+        margin: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        list-style: none;
+        background-color: var(--toggle-bar-background-color);
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+        transition-duration: .25s;
+        border-radius: 0px 0px 10px 10px;
+    }
+
+        .menu__box-2 span {
+            padding-left: 30px;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+
+    .menu__item-2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--writing-color);
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        transition-duration: .25s;
+    }
+
+        .menu__item-2 i {
+            margin-top: 8px;
+            font-size: 25px;
+            color: var(--writing-color);
+        }
+
+            .menu__item-2 i:hover {
+                color: var(--toggle-bar-color);
+            }
+
+    .menu__item i {
+        font-size: 25px;
+    }
+
+    /* ################### ORTAK KOD ALANI ################# */
+
+    .icerik {
+        padding: 20px 10px 0px 20px;
+    }
+
+    .cizgi-baslıgı {
+        padding: 0;
+        margin: 0;
+        font-size: 15px;
+        font-weight: bolder;
+    }
+
+    .cizgi {
+        border: 2px solid #F66B0E;
+        background-color: #F66B0E;
+        border-radius: 4px;
+        width: 90px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    .tablo {
+        /*padding-left:70px;
+        padding-right:70px;*/
+        text-align: center;
+        word-break: break-word;
+    }
+
+    .guncelle {
+        color: var(--toggle-bar-color);
+        text-decoration: none;
+        font-size: 9px;
+        font-weight: bold;
+    }
+
+        .guncelle:hover {
+            color: var(--toggle-bar-hover-color);
+        }
+
+    .veri-ekle {
+        display: block;
+        background-color: var(--toggle-bar-color);
+        color: var(--writing-color);
+        text-align: center;
+        width: 90px;
+        height: 30px;
+        padding-top: 7px;
+        margin-bottom:150px;
+        border-radius: 5px;
+        font-size: 10px;
+        font-weight: bolder;
+        text-decoration: none;
+    }
+
+        .veri-ekle:hover {
+            background-color: var(--toggle-bar-hover-color);
+            color: var(--writing-color);
+        }
+
+    .button-kaydet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .ekle-kaydet-button {
+        display: block;
+        border: none;
+        background-color: var(--toggle-bar-color);
+        color: var(--writing-color);
+        text-align: center;
+        width: 90px;
+        height: 30px;
+        padding-top: 2px;
+        border-radius: 5px;
+        font-size: 12px;
+        font-weight: bolder;
+        text-decoration: none;
+    }
+
+        .ekle-kaydet-button:hover {
+            background-color: var(--toggle-bar-hover-color);
+            color: var(--writing-color);
+        }
+
+    .kolon {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+    }
+
+    .row-3 {
+        margin-top: 20px;
+    }
+
+    .back-button {
+        position: relative;
+        left: 10px;
+        text-align: end;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+        .back-button a {
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            color: var(--writing-color);
+        }
+
+            .back-button a:hover {
+                color: var(--toggle-bar-color);
+            }
+
+        .back-button i {
+            font-size: 25px;
+            position: relative;
+            top: 4px;
+        }
+
+    /* ################### PROFİL ALANI ################# */
+
+    .meslekalanı, .mail, .konum, .github, .linkedin, .twitter, .profilresmi, .id {
+        font-size: 10px;
+        font-weight: 600;
+        color: var(--writing-color);
+        margin-bottom: 8px;
+    }
+
+    .meslekalanı-box, .mail-box, .konum-box, .github-box, .linkedin-box, .twitter-box, .profilresmi-box {
+        margin-bottom: 15px;
+        border: none;
+    }
+
+    .meslekalanı-box-getir, .mail-box-getir, .konum-box-getir, .github-box-getir, .linkedin-box-getir, .twitter-box-getir, .profilresmi-box-getir, .id-box-getir {
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 5px;
+        height: 35px;
+    }
+
+    /* ################### HAKKIMIZDA ALANI ################# */
+
+    .neyapıyor-baslik-label, .tanım-baslik, .neyapıyor-icerik-label, .id-label {
+        font-size: 10px;
+        font-weight: bold;
+        color: var(--writing-color);
+        margin-bottom: 8px;
+    }
+
+    .neyapıyor-baslik, .tanım-alanı, .neyapıyor-icerik {
+        margin-bottom: 15px;
+        border: none;
+    }
+
+    .neyapıyor-icerik, .tanım-alanı {
+        height: 100px !important;
+    }
+
+    .neyapıyor-baslik-getir, .id-box-getir {
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 5px;
+        height: 35px;
+    }
+
+    .neyapıyor-icerik-getir, .tanım-alanı-getir {
+        height: 100px !important;
+        border-radius: 5px;
+    }
+
+    /* ################### EĞİTİM ALANI ################# */
+
+    .okulad-label, .okulyil-label, .okulalan-label, .okulicerik-label, .okulid-label {
+        font-size: 10px;
+        font-weight: bold;
+        color: var(--writing-color);
+        margin-bottom: 8px;
+    }
+
+    .okulad-box .okulyil-box, .okulalan-box, .okulicerik-box {
+        margin-bottom: 15px;
+        border: none;
+    }
+
+    .okulad-box-getir, .okulyil-box-getir, .okulalan-box-getir, .okulid-box-getir {
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 5px;
+        height: 35px;
+    }
+
+    .okulicerik-box-getir {
+        height: 100px !important;
+        border-radius: 5px;
+    }
+
+    /* ################### DENEYİM ALANI ################# */
+
+    .deneyimad-label, .deneyimyil-label, .deneyimalan-label, .deneyimicerik-label, .deneyimid-label {
+        font-size: 10px;
+        font-weight: bold;
+        color: var(--writing-color);
+        margin-bottom: 8px;
+    }
+
+    .deneyimad-box, .deneyimyil-box, .deneyimalan-box, .deneyimicerik-box {
+        margin-bottom: 15px;
+        border: none;
+    }
+
+    .deneyimid-box-getir, .deneyimad-box-getir, .deneyimyil-box-getir, .deneyimalan-box-getir {
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 5px;
+        height: 35px;
+    }
+
+    .deneyimicerik-box {
+        height: 100px !important;
+    }
+
+    .deneyimicerik-box-getir {
+        height: 100px !important;
+        border-radius: 5px;
+    }
+
+    /* ################### BLOG ALANI ################# */
+
+    .postad-label, .postadres-label, .posticerik-label, .postresim-label, .postid-label {
+        font-size: 10px;
+        font-weight: bold;
+        color: var(--writing-color);
+        margin-bottom: 8px;
+    }
+
+    .postad-box, .postadres-box, .posticerik-box, .postresim-box, .postad-box-getir, .postadres-box-getir, .posticerik-box-getir, .postresim-box--getir, .postid-box-getir {
+        margin-bottom: 15px;
+        border: none;
+    }
+
+    .posticerik-box, .posticerik-box-getir {
+        height: 100px !important;
+        border-radius: 5px;
+    }
+}

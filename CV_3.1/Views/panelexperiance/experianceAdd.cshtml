@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.baslik = "Deneyim Ekle";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<div class="row row-3">
+    <div class="col-6">
+        <div class="cizgi-baslıgı">Veri Ekle</div>
+        <div class="cizgi"></div>
+    </div>
+    <div class="col-6 back-button">
+        <a href="/panelexperiance/experiance">Geri<i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+</div>
+
+<form method="post" class="form-group">
+    <div class="row">
+
+        <div class="col-4">
+            <label for="deneyimad" class="deneyimad-label">Şirket Adı:</label>
+            <input class="deneyimad-box form-control" id="deneyimad" name="DeneyimAd">
+        </div>
+
+        <div class="col-4">
+            <label for="deneyimyil" class="deneyimyil-label">Yıl:</label>
+            <input class="deneyimyil-box form-control" id="deneyimyil" name="DeneyimYıl">
+        </div>
+
+        <div class="col-4">
+            <label for="deneyimalan" class="deneyimalan-label">Alan:</label>
+            <input class="deneyimalan-box form-control" id="deneyimalan" name="DeneyimAlan">
+        </div>
+
+    </div>
+
+    <div class="col-12">
+        <label for="deneyimicerik" class="deneyimicerik-label">İçerik:</label>
+        <textarea class="deneyimicerik-box form-control" id="deneyimicerik" name="DeneyimIcerik" placeholder="..."></textarea>
+    </div>
+
+
+    <div class="row button-kaydet"> <input type="submit" value="Kaydet" class="ekle-kaydet-button"></div>
+</form>

@@ -1,0 +1,44 @@
+﻿@model CV_3._1.Models.PanelEducation
+
+@{
+    ViewBag.baslik = "Eğitim Güncelle";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<div class="row row-3">
+    <div class="col-6">
+        <div class="cizgi-baslıgı">Veri Düzenle</div>
+        <div class="cizgi"></div>
+    </div>
+    <div class="col-6 back-button">
+        <a href="/paneleducation/education">Geri<i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+</div>
+
+
+@using (Html.BeginForm("educationUpdate", "paneleducation", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-6 kolon">
+            <label for="Id" class="okulid-label">Id:</label>
+            @Html.TextBoxFor(x => x.Id, new {@class = "form-control okulid-box-getir"})
+            <label for="OkulAd" class="okulad-label">Ad:</label>
+            @Html.TextBoxFor(x => x.OkulAd, new {@class = "form-control okulad-box-getir"})
+        </div>
+        <div class="col-6 kolon">
+            <label for="OkulYıl" class="okulyil-label">Yıl:</label>
+            @Html.TextBoxFor(x => x.OkulYıl, new {@class = "form-control okulyil-box-getir"})
+            <label for="OkulAlan" class="okulalan-label">Alan:</label>
+            @Html.TextBoxFor(x => x.OkulAlan, new {@class = "form-control okulalan-box-getir"})
+        </div>
+    </div>
+
+
+    <div class="col-12">
+        <label for="OkulIcerik" class="okulicerik-label">içerik:</label>
+        @Html.TextAreaFor(x => x.OkulIcerik , new {@class = "form-control okulicerik-box-getir"})
+    </div>
+
+    <div class="row button-kaydet"><button class="ekle-kaydet-button"> Güncelle</button></div>
+}
+

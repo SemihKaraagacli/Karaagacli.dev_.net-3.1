@@ -1,0 +1,38 @@
+﻿@using CV_3._1.Models
+@model List<PanelAbout>
+
+@{
+    ViewBag.baslik = "HAKKKIMDA";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<div class="cizgi-baslıgı">Veri Listesi</div>
+<div class="cizgi"></div>
+
+<table class="tablo table table-striped table-dark">
+    <thead>
+        <tr>
+            <th class="about-id-satir">#</th>
+            <th class="about-satir">Tanım</th>
+            <th class="about-satir">Ne Yapıyorum Başlık</th>
+            <th class="about-satir">Ne Yapıyorum İçerik</th>
+            <th class="about-guncelle-satir">-</th>
+            <th class="about-guncelle-satir">-</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td class="align-middle about-id-satir">@x.Id</td>
+                <td class="align-middle about-satir">@x.Tanıtım</td>
+                <td class="align-middle about-satir">@x.NelerYapıyorumAd</td>
+                <td class="align-middle about-satir">@x.NelerYapıyorumIcerik</td>
+                <td class="align-middle about-guncelle-satir"><a href="/panelabout/aboutRemove/@x.Id" class="guncelle">Güncelle</a></td>
+                <td class="align-middle about-guncelle-satir"><a href="/panelabout/aboutGet/@x.Id" class="guncelle">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/panelabout/aboutAdd" class="veri-ekle"> Yeni Veri Ekle</a>

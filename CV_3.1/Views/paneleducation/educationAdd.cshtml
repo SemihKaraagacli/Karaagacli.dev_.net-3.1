@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.baslik = "EĞİTİM EKLE";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<div class="row row-3">
+    <div class="col-6">
+        <div class="cizgi-baslıgı">Veri Ekle</div>
+        <div class="cizgi"></div>
+    </div>
+    <div class="col-6 back-button">
+        <a href="/paneleducation/education">Geri<i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+</div>
+
+<form method="post" class="form-group">
+    <div class="row">
+
+        <div class="col-4">
+            <label for="okulad" class="okulad-label">Okul Adı:</label>
+            <input class="okulad-box form-control" id="okulad" name="OkulAd">
+        </div>
+
+        <div class="col-4">
+            <label for="okulyil" class="okulyil-label">Yıl:</label>
+            <input class="okulyil-box form-control" id="okulyil" name="OkulYıl">
+        </div>
+
+        <div class="col-4">
+            <label for="okulalan" class="okulalan-label">Bölüm:</label>
+            <input class="okulalan-box form-control" id="okulalan" name="OkulAlan">
+        </div>
+
+    </div>
+    <div class="col-12">
+        <label for="okulicerik" class="okulicerik-label">İçerik:</label>
+        <textarea class="okulicerik-box form-control" id="okulicerik" name="OkulIcerik" placeholder="..."></textarea>
+    </div>
+
+
+    <div class="row button-kaydet"> <input type="submit" value="Kaydet" class="ekle-kaydet-button"></div>
+</form>
+

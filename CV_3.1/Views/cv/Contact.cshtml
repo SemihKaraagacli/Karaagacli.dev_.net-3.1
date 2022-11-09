@@ -1,0 +1,105 @@
+﻿@using CV_3._1.Models
+@model List<PanelProfil>
+@{
+    ViewBag.baslik = "İLETİŞİM";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.baslik</title>
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="~/assets/css/frontendStyle.css" type="text/css" />
+    <link rel="stylesheet" href="~/assets/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="~/assets/webfonts/" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="row main-row">
+        <div class="col-12 col-md-12 col-xl-3 left-sidebar-1">
+            @foreach (var x in Model)
+            {
+                <div class="profil-img">
+                    <img src="~/assets/images/Profil_images/@x.ProfilResmi" alt="">
+                </div>
+                <div class="profil-name">
+                    Semih KARAAĞAÇLI
+                </div>
+                <div class="job-area-main">
+                    <span class="job-area">@x.MeslekAlanı</span>
+                </div>
+
+
+                <div class="mail">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:@x.Mail">@x.Mail</a>
+                </div>
+
+                <div class="location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <a href="@x.KonumAdresi">@x.Konum</a>
+                </div>
+                <div class="social-media-main">
+                    <div class="social-media">
+                        <a href="@x.Github"><i class="fa-brands fa-square-github"></i></a>
+                        <a href="@x.Linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="@x.Twitter"><i class="fa-brands fa-square-twitter"></i></a>
+                        <a href="@x.Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="col-12 col-md-12 col-xl-9 main-sidebar">
+            <div class="row">
+                <div class="col-6"></div>
+                <div class="col-6">
+                    <ul class="navi-bar">
+                        <li class="navi-item"><a href="/Cv/About/">Hakkımda</a></li>
+                        <li class="navi-item"><a href="/Cv/Resume/">Özgeçmiş</a></li>
+                        <li class="navi-item"><a href="/Cv/Project/">Projeler</a></li>
+                        <li class="navi-item"><a href="/Cv/Contact/">İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="page-header">
+                <h4 style="font-family: 'Ubuntu', sans-serif;">@ViewBag.baslik</h4>
+                <span></span>
+            </div>
+
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48183.62490480488!2d39.73125995!3d40.99294145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40643c066bf2ec89%3A0xc4390aca748c2b71!2sTrabzon%2C%20Ortahisar%2FTrabzon!5e0!3m2!1str!2str!4v1666964921630!5m2!1str!2str"
+                        width="90%"
+                        height="600px"
+                        style="border:0; border-radius: 10px; margin-bottom: 25px;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"> </iframe>
+            </div>
+            <div class="contact-cimetry">
+                <div class="row">
+                    <div class="col-6">
+                        <input class="form-control" type="text" placeholder="Ad" disabled>
+                    </div>
+                    <div class="col-6">
+                        <input class="form-control" type="text" placeholder="Soyad" disabled>
+                    </div>
+                </div>
+                <div class="col-12" style="margin-top: 20px; margin-bottom: 20px;">
+                    <input class="form-control" type="email" placeholder="semih@example.com" disabled>
+                </div>
+                <div class="col-12">
+                    <textarea class="form-control" name="" id="" placeholder="Düşünceleriniz için teşekkür ederim." style="height: 200px!important;" disabled></textarea>
+                </div>
+                <div class="col-12 contact-button-main">
+                    <a class="contact-button" href="#">Gönder</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

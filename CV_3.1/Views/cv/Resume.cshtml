@@ -1,0 +1,145 @@
+﻿@model Tuple<List<CV_3._1.Models.PanelProfil>, List<CV_3._1.Models.PanelEducation>,List<CV_3._1.Models.PanelExperiance>>
+
+@{
+    ViewBag.baslik = "ÖZGEÇMİŞ";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.baslik</title>
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="~/assets/css/frontendStyle.css" type="text/css" />
+    <link rel="stylesheet" href="~/assets/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="~/assets/webfonts/" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="row main-row">
+        <div class="col-12 col-md-12 col-xl-3 left-sidebar-1">
+            @foreach (var x in Model.Item1)
+            {
+                <div class="profil-img">
+                    <img src="~/assets/images/Profil_images/@x.ProfilResmi" alt="">
+                </div>
+                <div class="profil-name">
+                    Semih KARAAĞAÇLI
+                </div>
+                <div class="job-area-main">
+                    <span class="job-area">@x.MeslekAlanı</span>
+                </div>
+
+
+                <div class="mail">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:@x.Mail">@x.Mail</a>
+                </div>
+
+                <div class="location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <a href="@x.KonumAdresi">@x.Konum</a>
+                </div>
+                <div class="social-media-main">
+                    <div class="social-media">
+                        <a href="@x.Github"><i class="fa-brands fa-square-github"></i></a>
+                        <a href="@x.Linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="@x.Twitter"><i class="fa-brands fa-square-twitter"></i></a>
+                        <a href="@x.Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="col-12 col-md-12 col-xl-9 main-sidebar">
+            <div class="row">
+                <div class="col-6"></div>
+                <div class="col-6">
+                    <ul class="navi-bar">
+                        <li class="navi-item"><a href="/Cv/About/">Hakkımda</a></li>
+                        <li class="navi-item"><a href="/Cv/Resume/">Özgeçmiş</a></li>
+                        <li class="navi-item"><a href="/Cv/Project/">Projeler</a></li>
+                        <li class="navi-item"><a href="/Cv/Contact/">İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="page-header">
+                <h4 style="font-family: 'Ubuntu', sans-serif;">@ViewBag.baslik</h4>
+                <span></span>
+            </div>
+
+            <div style="margin-top: 35px;"></div>
+            <div class=" education">
+                <div class="education-icon-name" style="font-family: 'Ubuntu', sans-serif;">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <div class="name">Eğitim</div>
+                </div>
+                <div class="left-line"></div>
+            </div>
+
+            @foreach (var y in Model.Item2)
+            {
+
+                <div class=" education">
+                    <div class="circle"></div>
+                    <div class="left-line-2">
+                        <div class="cimetry">
+                            <div class="school-name" style="font-family: 'Barlow', sans-serif;">
+                                @y.OkulAd
+                            </div>
+                            <div class="school-date" style="font-family: 'Lora', serif;">
+                                @y.OkulYıl
+                            </div>
+                            <div class="school-area" style="font-family: 'Lora', serif;">
+                                @y.OkulAlan
+                            </div>
+                            <div class="school-info" style="font-family: 'Lora', serif;">
+                                @y.OkulIcerik
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div style="margin-top: 45px;"></div>
+
+            <div class=" experiance">
+                <div class="experiance-icon-name" style="font-family: 'Ubuntu', sans-serif;">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <div class="name">Deneyim</div>
+                </div>
+                <div class="left-line"></div>
+            </div>
+            @foreach (var z in Model.Item3)
+            {
+
+                <div class=" experiance">
+                    <div class="circle"></div>
+                    <div class="left-line-2">
+                        <div class="cimetry">
+                            <div class="job-name" style="font-family: 'Barlow', sans-serif;">
+                                @z.DeneyimAd
+                            </div>
+                            <div class="job-date" style="font-family: 'Lora', serif;">
+                                @z.DeneyimYıl
+                            </div>
+                            <div class="job-field" style="font-family: 'Lora', serif;">
+                                @z.DeneyimAlan
+                            </div>
+                            <div class="job-info" style="font-family: 'Lora', serif;">
+                                @z.DeneyimIcerik
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div style="margin-bottom: 65px;"></div>
+        </div>
+    </div>
+</body>
+
+</html>

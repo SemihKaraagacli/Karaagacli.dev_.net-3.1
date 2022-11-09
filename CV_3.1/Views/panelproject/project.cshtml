@@ -1,0 +1,40 @@
+﻿@using CV_3._1.Models
+@model List<PanelProject>
+
+@{
+    ViewBag.baslik = "Projeler";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<div class="cizgi-baslıgı">Veri Listesi</div>
+<div class="cizgi"></div>
+
+<table class="tablo table table-striped table-dark">
+    <thead>
+        <tr>
+            <th class="project-id-satir">#</th>
+            <th class="project-satir">Post Adı</th>
+            <th class="project-satir">Post Adresi</th>
+            <th class="project-satir">Post içeriği</th>
+            <th class="project-satir">Post Resimi</th>
+            <th class="project-guncelle-satir">-</th>
+            <th class="project-guncelle-satir">-</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td class="align-middle project-id-satir">@x.Id</td>
+                <td class="align-middle project-satir">@x.ProjectAd</td>
+                <td class="align-middle project-satir">@x.ProjectAdres</td>
+                <td class="align-middle project-satir">@x.ProjectIcerik</td>
+                <td class="align-middle project-satir"><img class="src-resim" src="/assets/images/Project_images/@x.ProjectResim" /></td>
+                <td class="align-middle project-guncelle-satir"><a href="/panelproject/projectRemove/@x.Id" class="guncelle">Sil</a></td>
+                <td class="align-middle project-guncelle-satir"><a href="/panelproject/projectGet/@x.Id" class="guncelle">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/panelproject/projectAdd" class="veri-ekle"> Yeni Veri Ekle</a>

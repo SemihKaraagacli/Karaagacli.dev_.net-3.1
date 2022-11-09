@@ -1,0 +1,44 @@
+﻿@model CV_3._1.Models.PanelAbout
+
+@{
+    ViewBag.baslik = "HAKKKIMDA GÜNCELLE";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<div class="row row-3">
+    <div class="col-6">
+        <div class="cizgi-baslıgı">Veri Düzenle</div>
+        <div class="cizgi"></div>
+    </div>
+    <div class="col-6 back-button">
+        <a href="/panelabout/about">Geri<i class="fa-solid fa-chevron-right"></i></a>
+
+    </div>
+</div>
+
+@using (Html.BeginForm("aboutUpdate", "panelabout", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-6 kolon">
+            <label for="Id" class="id-label">ID:</label>
+            @Html.TextBoxFor(x=>x.Id, new {@class = "form-contol id-box-getir"})
+        </div>
+        <div class="col-6 kolon">
+            <label for="NelerYapıyorumAd" class="neyapıyor-baslik-label">Ne Yapıyor Başlık:</label>
+            @Html.TextBoxFor(x=>x.NelerYapıyorumAd, new {@class = "form-contol neyapıyor-baslik-getir"})
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 kolon">
+            <label for="Tanıtım" class="tanım-baslik">Tanım:</label>
+            @Html.TextAreaFor(x=>x.Tanıtım, new {@class = "form-contol tanım-alanı-getir"})
+        </div>
+        <div class="col-6 kolon">
+            <label for="NelerYapıyorumIcerik" class="neyapıyor-icerik-label">Ne Yapıyor İçerik:</label>
+            @Html.TextAreaFor(x=>x.NelerYapıyorumIcerik, new {@class = "form-contol neyapıyor-icerik-getir"})
+        </div>
+    </div>
+
+    <div class="row button-kaydet"><button class="ekle-kaydet-button"> Güncelle</button></div>
+}

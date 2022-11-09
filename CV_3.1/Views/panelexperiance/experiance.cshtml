@@ -1,0 +1,40 @@
+﻿@using CV_3._1.Models
+@model List<PanelExperiance>
+@{
+    ViewBag.baslik = "DENEYİM";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<div class="cizgi-baslıgı">Veri Listesi</div>
+<div class="cizgi"></div>
+
+<table class="tablo table table-striped table-dark">
+    <thead>
+        <tr>
+            <th class="experiance-id-satir ">#</th>
+            <th class="experiance-satir">Şiket Adı</th>
+            <th class="experiance-satir">Yıl</th>
+            <th class="experiance-satir">Alan</th>
+            <th class="experiance-satir">İçerik</th>
+            <th class="experiance-guncelle-satir">-</th>
+            <th class="experiance-guncelle-satir">-</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td class="align-middle experiance-id-satir">@x.Id</td>
+                <td class="align-middle experiance-satir">@x.DeneyimAd</td>
+                <td class="align-middle experiance-satir">@x.DeneyimYıl</td>
+                <td class="align-middle experiance-satir">@x.DeneyimAlan</td>
+                <td class="align-middle experiance-satir">@x.DeneyimIcerik</td>
+                <td class="align-middle experiance-guncelle-satir"><a href="/panelexperiance/experianceRemove/@x.Id" class="guncelle">Sil</a></td>
+                <td class="align-middle experiance-guncelle-satir"><a href="/panelexperiance/experianceGet/@x.Id" class="guncelle">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/panelexperiance/experianceAdd" class="veri-ekle"> Yeni Veri Ekle</a>
+

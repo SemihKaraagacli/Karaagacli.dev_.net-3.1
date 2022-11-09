@@ -1,0 +1,42 @@
+﻿@model CV_3._1.Models.PanelExperiance
+
+@{
+    ViewBag.baslik = "Deneyim Güncelle";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+
+<div class="row row-3">
+    <div class="col-6">
+        <div class="cizgi-baslıgı">Veri Düzenle</div>
+        <div class="cizgi"></div>
+    </div>
+    <div class="col-6 back-button">
+        <a href="/panelexperiance/experiance">Geri<i class="fa-solid fa-chevron-right"></i></a>
+
+    </div>
+</div>
+@using (Html.BeginForm("experianceUpdate", "panelexperiance", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-6 kolon">
+            <label for="id" class="deneyimid-label">ID:</label>
+            @Html.TextBoxFor(x=>x.Id, new{@class="form-control, deneyimid-box-getir"})
+            <label for="deneyimad" class="deneyimad-label">Şirket Adı:</label>
+            @Html.TextBoxFor(x=>x.DeneyimAd, new{@class="form-control, deneyimad-box-getir"})
+        </div>
+
+        <div class="col-6 kolon">
+            <label for="deneyimyil" class="deneyimyil-label">Yıl:</label>
+            @Html.TextBoxFor(x=>x.DeneyimYıl, new{@class="form-control, deneyimyil-box-getir"})
+            <label for="deneyimalan" class="deneyimalan-label">Alan:</label>
+            @Html.TextBoxFor(x=>x.DeneyimAlan, new{@class="form-control, deneyimalan-box-getir"})
+        </div>
+    </div>
+    <div class="col-12 kolon">
+        <label for="deneyimicerik" class="deneyimicerik-label">İçerik:</label>
+        @Html.TextAreaFor(x=>x.DeneyimIcerik, new{@class="form-control, deneyimicerik-box-getir"})
+    </div>
+    <div class="row button-kaydet"><button class="ekle-kaydet-button"> Güncelle</button></div>
+
+}

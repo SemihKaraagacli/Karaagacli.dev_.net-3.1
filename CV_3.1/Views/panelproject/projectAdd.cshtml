@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.baslik = "Post Ekle";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<div class="row row-3">
+    <div class="col-6">
+        <div class="cizgi-baslıgı">Veri Ekle</div>
+        <div class="cizgi"></div>
+    </div>
+    <div class="col-6 back-button">
+        <a href="/panelproject/project">Geri<i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+</div>
+
+<form method="post" class="form-group" enctype="multipart/form-data">
+    <div class="row">
+
+        <div class="col-6">
+            <label for="postad" class="postad-label">Post Adı:</label>
+            <input class="postad-box form-control" id="postad" name="ProjectAd">
+        </div>
+
+        <div class="col-6">
+            <label for="postadres" class="postadres-label">Post Adresi:</label>
+            <input class="postadres-box form-control" id="postadres" name="ProjectAdres">
+        </div>
+    </div>
+    <div class="col-12">
+        <label for="posticerik" class="posticerik-label">Post İçerik:</label>
+        <textarea class="posticerik-box form-control" id="posticerik" name="ProjectIcerik"> </textarea>
+    </div>
+
+    <div class="col-12">
+        <label for="postresim" class="postresim-label">Post Resmi:</label>
+        <input class="postresim-box form-control" type="file" id="postresim" name="ProjectDosya">
+    </div>
+
+
+    <div class="row button-kaydet"> <input type="submit" value="Kaydet" class="ekle-kaydet-button"></div>
+</form>
+
